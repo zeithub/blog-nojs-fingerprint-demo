@@ -26,7 +26,7 @@ export default async function initApp(): Promise<express.Express> {
           req.protocol === 'http' &&
           // The Elastic Beanstalk health checker expects the response code to be 200
           !req.hostname.endsWith('.elasticbeanstalk.com') &&
-          req.hostname !== 'localhost' &&
+          ['localhost', '127.0.0.1', '127.0.0.1:8080'].includes(req.hostname) &&
           !/^[\da-f:]*[\d.]*$/.test(req.hostname)
         ) {
           res.redirect(301, getUrlFromExpressRequest(req, true).replace('http://', 'https://'))

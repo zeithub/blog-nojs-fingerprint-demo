@@ -58,15 +58,11 @@ export default function waitResultFrame(
 </style>`
 
   const bodyHtml = `
-<div class="__loading __delay">
-  <div>Your fingerprint:</div>
-  <h3 class="fp-block__loading">Gathering data...</h3>
-</div>
+
 
 <div class="__ready __delay">
-  <div>Your fingerprint is ready</div>
   <div>
-    <a href="${escapeHtml(resultFrameUrl)}" class="fp-block__button">Show</a>
+    <a href="${escapeHtml(resultFrameUrl)}" class="fp-block__button">hash</a>
   </div>
 </div>`
 

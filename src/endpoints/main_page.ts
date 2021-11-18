@@ -2,7 +2,6 @@ import signalSources from '../signal_sources'
 import { HttpHeaderSignalSource, Storage } from '../common_types'
 import { escapeHtml, HttpResponse } from '../utils'
 import renderLayout from '../view/layout'
-import renderHeroTitle from '../view/hero_title'
 import renderJsDisableGuide from '../view/js_disable_guide'
 import renderSocialHeaders from '../view/social_headers'
 import { clientHintHeaders as resultDelayChHeaders } from './wait_result_frame'
@@ -57,21 +56,9 @@ export default async function renderMainPage({
   <img src="${escapeHtml(getHeaderProbeUrl(visitId, 'image'))}" alt="" />
 ${codeForCssSignalSources.html.join('\n')}
 </div>
-${renderHeroTitle('No-JS fingerprinting')}
-<p>
-  Fingerprinting is a&nbsp;way of identifying browsers without the&nbsp;use of&nbsp;cookies or&nbsp;data storage.
-  Created using properties like language and installed fonts,
-  your fingerprint stays the&nbsp;same even if&nbsp;your browser is in&nbsp;incognito mode.
-</p>
 <div>
   <iframe src="${escapeHtml(getResultFrameUrl(visitId))}" class="fp-frame" allowtransparency></iframe>
-</div>
-<p>
-  This demo further illustrates that fingerprinting is&nbsp;possible — even without JavaScript and cookies.
-  To&nbsp;verify this, disable JavaScript and cookies, then refresh your browser.
-  Your fingerprint will remain unchanged.
-</p>
-${jsDisableGuide ? `<p class="js-disable__header">${escapeHtml(jsDisableGuide[0])}</p>` : ''}`
+</div>`
 
   const wideSubBodyHtml = jsDisableGuide?.[1]
 

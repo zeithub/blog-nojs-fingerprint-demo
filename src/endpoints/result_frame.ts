@@ -8,19 +8,18 @@ import renderFrameLayout from '../view/frame_layout'
 export default async function resultFrame(
   storage: Storage,
   visitId: string,
-  fullResultUrl: string,
+  fullResultUrl = '1',
 ): Promise<HttpResponse> {
   const visit = await storage.finalizeAndGetVisit(visitId)
   if (!visit) {
     return notFoundPage()
   }
-
+  console.log(fullResultUrl)
   return renderFrameLayout({
     htmlTitle: 'Your fingerprint',
     bodyHtml: `
-<div>Your fingerprint:</div>
-<div class="fp-block__fingerprint">${escapeHtml(visit.fingerprint)}</div>
-<div><a href="${escapeHtml(fullResultUrl)}" target="_top">See more details →</a></div>`,
+
+<div class="fp-block__fingerprint">${escapeHtml(visit.fingerprint)}</div>`,
   })
 }
 

@@ -1,5 +1,3 @@
--- The visit_signals table
-
 CREATE SEQUENCE IF NOT EXISTS visit_signals_id_seq;
 
 CREATE TABLE "public"."visit_signals" (
@@ -26,7 +24,6 @@ COMMENT ON INDEX "visit_signals_key_and_value" IS 'To analyze the values of a ke
 COMMENT ON INDEX "visit_signals_key" IS 'To analyze the values of a key';
 
 
--- The visits table
 
 CREATE SEQUENCE IF NOT EXISTS visits_id_seq;
 

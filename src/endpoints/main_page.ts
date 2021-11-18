@@ -57,7 +57,7 @@ export default async function renderMainPage({
 ${codeForCssSignalSources.html.join('\n')}
 </div>
 <div>
-  <iframe src="${escapeHtml(getResultFrameUrl(visitId))}" class="fp-frame" allowtransparency></iframe>
+  <iframe src="${escapeHtml(getResultFrameUrl(visitId))}" class="fp-frame" allowtransparency style="border: none;width: 150px;height: 50px;display: none"></iframe>
 </div>`
 
   const wideSubBodyHtml = jsDisableGuide?.[1]

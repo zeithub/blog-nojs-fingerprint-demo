@@ -8,7 +8,7 @@ export default function renderFrameLayout({ bodyHtml = '', ...options }: Options
     ...options,
     noMinWidth: true,
     bodyHtml: `
-<div class="frame-layout fp-block">
+<div class="frame-layout fp-block" style='border: transparent;border-color: red'>
   ${bodyHtml}
 </div>
     `,

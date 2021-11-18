@@ -95,11 +95,16 @@ h5 {
 
 .fp-block,
 .fp-frame {
-  height: 154px;
+  border: none;
+  height: 50px;
+  border: none;
+  border: red;
+
 }
 .fp-frame {
   border: none;
   width: 100%;
+  border: red;
   margin: 64px 0;
 }
 
@@ -243,4 +248,11 @@ h5 {
 }
 .outdated-warning__icon {
   height: 17px;
+}
+
+iframe{
+  border: none;
+  width: 100px;
+  height: 50px;
+  background: blue;
 }
